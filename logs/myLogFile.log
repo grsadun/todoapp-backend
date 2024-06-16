@@ -1,0 +1,14 @@
+6/16/24, 11:27:29 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:27:33 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:27:34 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:27:34 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:27:34 AM	AllExceptionsFilter	ThrottlerException: Too Many Requests
+6/16/24, 11:27:35 AM	AllExceptionsFilter	ThrottlerException: Too Many Requests
+6/16/24, 11:27:35 AM	AllExceptionsFilter	ThrottlerException: Too Many Requests
+6/16/24, 11:27:35 AM	AllExceptionsFilter	ThrottlerException: Too Many Requests
+6/16/24, 11:27:55 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:28:04 AM	undefined/tRequest for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:28:04 AM	AllExceptionsFilter	Invalid `this.databaseService.employee.findMany()` invocation in/Users/grsadun/Desktop/To-Do-App/backend/src/employees/employees.service.ts:17:44  14   15 async findAll(role?: "INTERN" | "ENGINEER" | "ADMIN") {  16   if (role)→ 17     return this.databaseService.employee.findMany({           where: {             role: "PASTA"                   ~~~~~~~           }         })Invalid value for argument `role`. Expected Role.
+6/16/24, 11:30:46 AM	EmployeesController	Request for ALL Employees	::ffff:127.0.0.1
+6/16/24, 11:30:46 AM	AllExceptionsFilter	Invalid `this.databaseService.employee.findMany()` invocation in/Users/grsadun/Desktop/To-Do-App/backend/src/employees/employees.service.ts:17:44  14   15 async findAll(role?: "INTERN" | "ENGINEER" | "ADMIN") {  16   if (role)→ 17     return this.databaseService.employee.findMany({           where: {             role: "PASTA"                   ~~~~~~~           }         })Invalid value for argument `role`. Expected Role.
+6/16/24, 11:30:57 AM	EmployeesController	Request for ALL Employees	::ffff:127.0.0.1

@@ -10,14 +10,41 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const database_module_1 = require("./database/database.module");
+const employees_module_1 = require("./employees/employees.module");
+const throttler_1 = require("@nestjs/throttler");
+const core_1 = require("@nestjs/core");
+const my_logger_module_1 = require("./my-logger/my-logger.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            database_module_1.DatabaseModule,
+            employees_module_1.EmployeesModule,
+            throttler_1.ThrottlerModule.forRoot([
+                {
+                    name: "short",
+                    ttl: 1000,
+                    limit: 3,
+                },
+                {
+                    name: "long",
+                    ttl: 60000,
+                    limit: 100,
+                },
+            ]),
+            my_logger_module_1.MyLoggerModule,
+        ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [
+            app_service_1.AppService,
+            {
+                provide: core_1.APP_GUARD,
+                useClass: throttler_1.ThrottlerGuard,
+            },
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
